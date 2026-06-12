@@ -9,11 +9,11 @@ Static waitlist landing page for **darquant.com**, hosted on GitHub Pages.
 - `CNAME` — custom domain for GitHub Pages (`darquant.com`).
 - `.nojekyll` — disables Jekyll processing.
 
-## 1. Set up the waitlist (Formspree)
-1. Sign up at https://formspree.io with `poriol@gmail.com`.
-2. Create a new form → copy its endpoint, e.g. `https://formspree.io/f/abcdwxyz`.
-3. In `index.html`, replace `YOUR_FORM_ID` in the form `action` with your real id.
-4. First real submission triggers a one-time Formspree confirmation email — click it.
+## 1. Waitlist (Formspree) — configured
+The form posts to `https://formspree.io/f/xnjyggvp` via AJAX (see the script at
+the bottom of `index.html`), so the page never redirects. The first real
+submission triggers a one-time Formspree confirmation email — click it to start
+receiving signups. Free tier: 50 submissions/month.
 
 ## 2. Deploy to GitHub Pages
 ```bash

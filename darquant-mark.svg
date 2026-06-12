@@ -1,0 +1,29 @@
+<svg width="240" height="240" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Darquant mark">
+  <g stroke="#2FE3A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- trunk -->
+    <path d="M28 54 L28 42"/>
+    <!-- primary forks -->
+    <path d="M28 42 L17 32"/>
+    <path d="M28 42 L41 31"/>
+    <!-- left lineage -->
+    <path d="M17 32 L12 22"/>
+    <path d="M17 32 L23 20"/>
+    <!-- right lineage -->
+    <path d="M41 31 L37 18"/>
+    <!-- fittest lineage (slightly heavier) -->
+    <path d="M41 31 L51 12" stroke-width="3.4"/>
+  </g>
+  <!-- nodes -->
+  <g fill="#2FE3A8">
+    <circle cx="28" cy="54" r="2.3"/>
+    <circle cx="28" cy="42" r="2.3"/>
+    <circle cx="17" cy="32" r="2.3"/>
+    <circle cx="41" cy="31" r="2.3"/>
+    <circle cx="12" cy="22" r="3.1"/>
+    <circle cx="23" cy="20" r="3.1"/>
+    <circle cx="37" cy="18" r="3.1"/>
+  </g>
+  <!-- fittest terminal node -->
+  <circle cx="51" cy="12" r="4.2" fill="#7B6CFF"/>
+  <circle cx="51" cy="12" r="6.4" fill="none" stroke="#7B6CFF" stroke-width="1.2" opacity="0.5"/>
+</svg>

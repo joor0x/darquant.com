@@ -1,0 +1,27 @@
+<svg width="430" height="96" viewBox="0 0 430 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Darquant">
+  <g transform="translate(6,12) scale(1.125)">
+    <g stroke="#2FE3A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M28 54 L28 42"/>
+      <path d="M28 42 L17 32"/>
+      <path d="M28 42 L41 31"/>
+      <path d="M17 32 L12 22"/>
+      <path d="M17 32 L23 20"/>
+      <path d="M41 31 L37 18"/>
+      <path d="M41 31 L51 12" stroke-width="3.4"/>
+    </g>
+    <g fill="#2FE3A8">
+      <circle cx="28" cy="54" r="2.3"/>
+      <circle cx="28" cy="42" r="2.3"/>
+      <circle cx="17" cy="32" r="2.3"/>
+      <circle cx="41" cy="31" r="2.3"/>
+      <circle cx="12" cy="22" r="3.1"/>
+      <circle cx="23" cy="20" r="3.1"/>
+      <circle cx="37" cy="18" r="3.1"/>
+    </g>
+    <circle cx="51" cy="12" r="4.2" fill="#7B6CFF"/>
+    <circle cx="51" cy="12" r="6.4" fill="none" stroke="#7B6CFF" stroke-width="1.2" opacity="0.6"/>
+  </g>
+  <text x="102" y="50" font-family="'Sora','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700" letter-spacing="1.5" dominant-baseline="middle">
+    <tspan fill="#F5F2EA">DAR</tspan><tspan fill="#2FE3A8">QUANT</tspan>
+  </text>
+</svg>

@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="blog-head reveal">
+  <div class="sec-eyebrow">
+    <span class="eyebrow">Field Notes</span>
+    <span class="n">// from the Arena</span>
+  </div>
+  <h1>Engineering an <span class="accent">evolutionary</span> trading desk</h1>
+  <p class="lead">{{ .Site.Params.description }}</p>
+</section>
+
+{{- $pages := where .Site.RegularPages "Section" "posts" -}}
+{{- if not .IsHome }}{{ $pages = .Pages }}{{ end -}}
+{{- $paginator := .Paginate $pages -}}
+
+<div class="postlist">
+  {{- range $paginator.Pages }}
+  <a class="pcard" href="{{ .RelPermalink }}">
+    <div class="pmeta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+      <span>·</span>
+      <span>{{ .ReadingTime }} min</span>
+      {{- with .Params.tags }}<span>·</span><span class="tag">{{ index . 0 }}</span>{{ end }}
+    </div>
+    <h2>{{ .Title }}</h2>
+    <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 150 }}{{ end }}</p>
+    <span class="more">Read →</span>
+  </a>
+  {{- end }}
+</div>
+
+{{- if gt $paginator.TotalPages 1 }}
+<nav class="pager" aria-label="pagination">
+  {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">← Newer</a>{{ else }}<span class="disabled">← Newer</span>{{ end }}
+  <span class="mono">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+  {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Older →</a>{{ else }}<span class="disabled">Older →</span>{{ end }}
+</nav>
+{{- end }}
+{{ end }}

@@ -1,0 +1,20 @@
+{{- $main := .Site.Params.mainSite -}}
+<footer>
+  <div class="inner">
+    <a class="brand" href="{{ $main }}">
+      <svg width="22" height="22" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#2FE3A8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M28 54 L28 42"/><path d="M28 42 L17 32"/><path d="M28 42 L41 31"/><path d="M17 32 L12 22"/><path d="M17 32 L23 20"/><path d="M41 31 L37 18"/><path d="M41 31 L51 12" stroke-width="3.8"/></g>
+        <g fill="#2FE3A8"><circle cx="12" cy="22" r="3.4"/><circle cx="23" cy="20" r="3.4"/><circle cx="37" cy="18" r="3.4"/></g>
+        <circle cx="51" cy="12" r="4.6" fill="#7B6CFF"/>
+      </svg>
+      DAR<span class="q">QUANT</span>
+    </a>
+    <div class="fl">
+      <a href="{{ $main }}/#how">How it works</a>
+      <a href="{{ $main }}/#arena">Arena</a>
+      <a href="{{ .Site.BaseURL }}">Blog</a>
+      {{- with .OutputFormats.Get "rss" }}<a href="{{ .Permalink }}">RSS</a>{{ end }}
+    </div>
+    <span class="mono">© {{ now.Year }} Darquant · darquant.com</span>
+  </div>
+</footer>

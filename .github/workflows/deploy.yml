@@ -1,0 +1,83 @@
+name: Deploy site to GitHub Pages
+
+# Builds the landing page + the Hugo blog and publishes the whole thing to
+# GitHub Pages on every push to main. The blog is mounted under /blog/ so the
+# site map ends up as:
+#
+#   /            -> index.html (landing page)
+#   /blog/       -> Hugo blog (built from ./blog)
+#
+# Requires: Settings -> Pages -> Source = "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  # Allow running the deploy manually from the Actions tab.
+  workflow_dispatch:
+
+# Pin Hugo so local builds and CI builds stay identical. Bump this when you
+# upgrade the local `hugo` snap/binary (check with `hugo version`).
+env:
+  HUGO_VERSION: 0.163.3
+
+# GitHub Pages needs these permissions to publish the artifact.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One live deployment at a time; let an in-progress run finish (don't cancel
+# a deploy half-way) but coalesce queued runs.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo (extended)
+        run: |
+          curl -sSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" -o /tmp/hugo.deb
+          sudo dpkg -i /tmp/hugo.deb
+          hugo version
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history so Hugo can read .Lastmod / .GitInfo
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build blog into _site/blog
+        run: |
+          hugo \
+            --source blog \
+            --minify \
+            --gc \
+            --destination "${GITHUB_WORKSPACE}/_site/blog"
+
+      - name: Assemble landing page at the site root
+        run: |
+          cp index.html               _site/
+          cp CNAME                     _site/
+          cp .nojekyll                 _site/
+          cp darquant-logo-dark.svg    _site/
+          cp darquant-mark.svg         _site/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

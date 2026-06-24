@@ -1,0 +1,41 @@
+baseURL = "https://darquant.com/blog/"
+defaultContentLanguage = "en"
+title = "Darquant — Field Notes"
+enableRobotsTXT = true
+
+[languages.en]
+  locale = "en-us"
+
+# The blog lives at /blog. baseURL already encodes that, so every
+# generated link (css, posts, RSS) is correctly prefixed.
+
+[params]
+  description = "Field notes on evolutionary algorithmic trading — strategy evolution, regime detection, and the engineering behind the Arena."
+  author = "Darquant"
+  mainSite = "https://darquant.com"
+
+[markup]
+  [markup.highlight]
+    noClasses = false        # emit CSS classes so our theme controls colors
+    lineNos = false
+    tabWidth = 2
+  [markup.goldmark.renderer]
+    unsafe = true            # allow raw HTML in posts (figures, embeds)
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[taxonomies]
+  tag = "tags"
+
+[pagination]
+  pagerSize = 8
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[services.rss]
+  limit = 20
+
+[permalinks]
+  posts = "/:slug/"

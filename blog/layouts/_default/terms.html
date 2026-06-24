@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="blog-head reveal">
+  <div class="sec-eyebrow">
+    <span class="eyebrow">Topics</span>
+    <span class="n">// browse by tag</span>
+  </div>
+  <h1>All <span class="accent">tags</span></h1>
+  <div class="taglist">
+    {{- range .Data.Terms.ByCount }}
+    <a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} ({{ .Count }})</a>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

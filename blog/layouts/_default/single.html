@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="article">
+  <div class="ahead reveal">
+    <div class="ameta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span>·</span>
+      <span>{{ .ReadingTime }} min read</span>
+      {{- with .Params.author }}<span>·</span><span>{{ . }}</span>{{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.deck }}<p class="deck">{{ . }}</p>{{ end }}
+    {{- with .Params.tags }}
+    <div class="atags">
+      {{- range . }}<a class="tag" href="{{ "tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+    </div>
+    {{- end }}
+  </div>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  <div class="article-foot">
+    <a class="backlink" href="{{ .Site.BaseURL }}">← All field notes</a>
+    <a class="backlink" href="{{ .Site.Params.mainSite }}/#access">Request Arena access →</a>
+  </div>
+</article>
+{{ end }}

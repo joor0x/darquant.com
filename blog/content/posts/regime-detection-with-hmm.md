@@ -42,8 +42,3 @@ earned in trend regimes are throttled when the model flips to chop, and vice ver
 This is the connective tissue between the two halves of the engine — evolution breeds
 specialists, the HMM decides which specialists are on the field today. Neither works
 nearly as well alone.
-
----
-
-*More on the [meta-labeling layer]({{< relref "meta-labeling" >}}) that sits on top of this —
-vision-LLM chart classification gating entries — now up.*

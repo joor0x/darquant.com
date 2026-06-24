@@ -80,7 +80,7 @@ piling onto yesterday's winner.
 When a regime shifts — volatility regime flips, a trend dies — an optimized point
 strategy is simply *wrong*, and you find out in live PnL. An evolved population already
 contains lineages adapted to the new regime; the HMM regime detector promotes them and
-demotes the rest, and a [meta-labeler]({{< relref "meta-labeling" >}}) makes the final per-trade call
+demotes the rest, and a meta-labeler makes the final per-trade call
 on which of their signals are actually worth taking. You're not re-running a sweep at
 3am. The desk adapts because it was **built to**.
 

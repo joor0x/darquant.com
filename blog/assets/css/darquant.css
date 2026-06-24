@@ -38,10 +38,10 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;letter-spacing:-.02em;line-height:1.1;
 nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(11,15,26,.7);border-bottom:1px solid var(--line)}
 nav .inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 28px}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;letter-spacing:.5px;font-size:19px;color:#fff}
-.brand .q{color:var(--mint)}
+.brand .q{color:var(--mint);margin-left:1px}
 .navlinks{display:flex;gap:30px;align-items:center}
-.navlinks a{font-size:14px;color:var(--slate);transition:color .2s}
-.navlinks a:hover{color:var(--paper)}
+.navlinks a:not(.btn){font-size:14px;color:var(--slate);transition:color .2s}
+.navlinks a:not(.btn):hover{color:var(--paper)}
 .navlinks a.active{color:var(--paper)}
 .btn{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;border-radius:10px;padding:11px 18px;border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-primary{background:var(--mint);color:#04160f;box-shadow:0 0 0 0 rgba(47,227,168,.4)}

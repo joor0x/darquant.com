@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-02M2QHFD5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-02M2QHFD5T');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Darquant — Evolutionary Quant Arena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,10 +50,10 @@
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(11,15,26,.7);border-bottom:1px solid var(--line)}
   nav .inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 28px}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;letter-spacing:.5px;font-size:19px;color:#fff}
-  .brand .q{color:var(--mint)}
+  .brand .q{color:var(--mint);margin-left:1px}
   .navlinks{display:flex;gap:30px;align-items:center}
-  .navlinks a{font-size:14px;color:var(--slate);transition:color .2s}
-  .navlinks a:hover{color:var(--paper)}
+  .navlinks a:not(.btn){font-size:14px;color:var(--slate);transition:color .2s}
+  .navlinks a:not(.btn):hover{color:var(--paper)}
   .btn{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;border-radius:10px;padding:11px 18px;border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;display:inline-flex;align-items:center;gap:8px}
   .btn-primary{background:var(--mint);color:#04160f;box-shadow:0 0 0 0 rgba(47,227,168,.4)}
   .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 30px -8px rgba(47,227,168,.5)}
@@ -160,7 +169,7 @@
         <g fill="#2FE3A8"><circle cx="12" cy="22" r="3.4"/><circle cx="23" cy="20" r="3.4"/><circle cx="37" cy="18" r="3.4"/></g>
         <circle cx="51" cy="12" r="4.6" fill="#7B6CFF"/>
       </svg>
-      DAR<span class="q">QUANT</span>
+      <span class="wm">DAR<span class="q">QUANT</span></span>
     </a>
     <div class="navlinks">
       <a href="#how">How it works</a>
@@ -309,7 +318,7 @@
         <g fill="#2FE3A8"><circle cx="12" cy="22" r="3.4"/><circle cx="23" cy="20" r="3.4"/><circle cx="37" cy="18" r="3.4"/></g>
         <circle cx="51" cy="12" r="4.6" fill="#7B6CFF"/>
       </svg>
-      DAR<span class="q">QUANT</span>
+      <span class="wm">DAR<span class="q">QUANT</span></span>
     </a>
     <div class="fl">
       <a href="#how">How it works</a>
